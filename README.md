@@ -1,50 +1,63 @@
-# Prompt Quality Assessment Framework
+# 🧠 Prompt Quality Assessment Framework
+> UNT Summer Research Program 2025
 
-> UNT Summer Research Program 2025 | 
-> Applied Prompt Engineering Research
+[![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)]()
+[![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white)]()
+[![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white)]()
 
 ## Overview
+A scientifically validated ML framework for automated AI prompt quality assessment, developed under Prof. Sagnik Ray Choudhury at the University of North Texas. Processes 17,393 real-world prompts from the LMSYS Chatbot Arena dataset using an ensemble of 11 ML models.
 
-An ML-based ensemble framework for automated AI prompt 
-quality assessment, developed under Prof. Sagnik Ray 
-Choudhury at the University of North Texas. Processed 
-17,393 real-world prompts from the LMSYS Chatbot Arena 
-dataset to derive scientifically validated quality weights.
+## 🏆 Key Results
 
-## Key Results
+| Metric | Result |
+|--------|--------|
+| Automated Scoring Accuracy | 66.7% |
+| GPT-4 Validation Accuracy | 77.3% |
+| GPT-4 F1 Score | 83.0% |
+| GPT-4 Precision | 89.7% |
+| Dataset Size | 17,393 prompts |
+| ML Models | 11 ensemble methods |
+| Bootstrap Stability | ±0.02 (1,000 iterations) |
+| Cross-Validation R² | 0.572 |
 
-- ✅ 66.7% automated scoring accuracy (exceeding human baseline)
-- ✅ 11 ML models all converged to identical R² = 0.572
-- ✅ GPT-4 validation: 77.3% accuracy, 83.0% F1 score, 89.7% precision
-- ✅ Bootstrap stability: weights within ±0.02 across 1,000 iterations
-- ✅ Framework adopted by PhD students for LLM optimization research
+## Quality Dimensions (Final Ensemble Weights)
 
-## Quality Dimensions (Final Weights)
-
-| Dimension | Weight | Priority |
-|-----------|--------|----------|
+| Dimension | Weight | Rank |
+|-----------|--------|------|
 | Completeness | 29.5% | 1st |
 | Specificity | 24.7% | 2nd |
 | Ethical Safety | 17.8% | 3rd |
 | Logical Coherence | 17.6% | 4th |
 | Clarity | 10.4% | 5th |
 
+## Repository Contents
+- `prompt-score.ipynb` — Core scoring pipeline with GPT-3.5/4 evaluation
+- `SHP.ipynb` — Stanford Human Preferences dataset preprocessing pipeline
+- `SHP_2.ipynb` — SHP data cleaning and deduplication workflow
+
 ## Methodology
-
-- Dataset: 17,393 prompts from LMSYS Chatbot Arena
-- Raters: 3 independent evaluators, 300 prompts each
+- Dataset: LMSYS Chatbot Arena conversations
+- Raters: 3 independent evaluators × 300 prompts
 - Bias Correction: Rank-based normalization
-- ML Models: Linear, Ridge, Lasso, Elastic Net, 
-  Random Forest, Gradient Boosting, SVR, Neural Network,
-  XGBoost, Bayesian Ridge, Decision Tree
-- Validation: 70/30 split + 1,000 bootstrap iterations
+- Validation: 70/30 split + 1,000 bootstrap
 
-## Tech Stack
+## 11 ML Models Used
+Linear Regression | Ridge | Lasso | Elastic Net | Random Forest | Gradient Boosting | SVR | Neural Network | XGBoost | Bayesian Ridge | Decision Tree
 
-Python | Scikit-learn | PyTorch | Pandas | NumPy | 
-SHAP | GPT-4 API | OpenAI
+All 11 converged to identical R² = 0.572, validating the bias correction approach.
 
-## Enterprise Applications
+## How to Run
+```bash
+git clone https://github.com/Phoenixking-04/Prompt-Quality-Assessment-Framework.git
+pip install openai pandas numpy scikit-learn torch datasets matplotlib seaborn tqdm
+jupyter notebook prompt-score.ipynb
+```
 
-Designed for: conversational AI assistants, automated 
-employee support workflows, LLM output quality control
+Set your OpenAI API key in environment:
+```bash
+export OPENAI_API_KEY=your_key_here
+```
+
+---
+> 🔗 [Kalyankumar Sandireddy](https://kalyankumar-sandireddy.online)
