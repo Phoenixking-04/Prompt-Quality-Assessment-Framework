@@ -2,13 +2,13 @@
 > UNT Summer Research Program 2025
 
 [![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)]()
-[![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white)]()
 [![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white)]()
+[![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white)]()
 
 ## Overview
-A scientifically validated ML framework for automated AI prompt quality assessment, developed under Prof. Sagnik Ray Choudhury at the University of North Texas. Processes 17,393 real-world prompts from the LMSYS Chatbot Arena dataset using an ensemble of 11 ML models.
+Scientifically validated ML framework for automated AI prompt quality assessment developed under Prof. Sagnik Ray Choudhury at UNT. Processes 17,393 real-world prompts from the LMSYS Chatbot Arena dataset using an ensemble of 11 ML models.
 
-## 🏆 Key Results
+## 🏆 Results
 
 | Metric | Result |
 |--------|--------|
@@ -21,7 +21,7 @@ A scientifically validated ML framework for automated AI prompt quality assessme
 | Bootstrap Stability | ±0.02 (1,000 iterations) |
 | Cross-Validation R² | 0.572 |
 
-## Quality Dimensions (Final Ensemble Weights)
+## Quality Dimensions (Final Weights)
 
 | Dimension | Weight | Rank |
 |-----------|--------|------|
@@ -31,33 +31,23 @@ A scientifically validated ML framework for automated AI prompt quality assessme
 | Logical Coherence | 17.6% | 4th |
 | Clarity | 10.4% | 5th |
 
-## Repository Contents
-- `prompt-score.ipynb` — Core scoring pipeline with GPT-3.5/4 evaluation
-- `SHP.ipynb` — Stanford Human Preferences dataset preprocessing pipeline
-- `SHP_2.ipynb` — SHP data cleaning and deduplication workflow
+## Files
+- `prompt-score.ipynb` — Core scoring with GPT-3.5/4
+- `SHP.ipynb` — Stanford Human Preferences pipeline
+- `SHP_2.ipynb` — SHP deduplication workflow
 
-## Methodology
-- Dataset: LMSYS Chatbot Arena conversations
-- Raters: 3 independent evaluators × 300 prompts
-- Bias Correction: Rank-based normalization
-- Validation: 70/30 split + 1,000 bootstrap
-
-## 11 ML Models Used
+## 11 ML Models
 Linear Regression | Ridge | Lasso | Elastic Net | Random Forest | Gradient Boosting | SVR | Neural Network | XGBoost | Bayesian Ridge | Decision Tree
 
-All 11 converged to identical R² = 0.572, validating the bias correction approach.
+All 11 converged to R² = 0.572 — validating the bias correction approach.
 
 ## How to Run
 ```bash
 git clone https://github.com/Phoenixking-04/Prompt-Quality-Assessment-Framework.git
 pip install openai pandas numpy scikit-learn torch datasets matplotlib seaborn tqdm
+export OPENAI_API_KEY=your_key_here
 jupyter notebook prompt-score.ipynb
 ```
 
-Set your OpenAI API key in environment:
-```bash
-export OPENAI_API_KEY=your_key_here
-```
-
 ---
-> 🔗 [Kalyankumar Sandireddy](https://kalyankumar-sandireddy.online)
+> 🔗 Developer: [Kalyankumar Sandireddy](https://kalyankumar-sandireddy.online)
