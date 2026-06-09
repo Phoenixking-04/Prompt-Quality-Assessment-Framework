@@ -32,14 +32,14 @@ Scientifically validated ML framework for automated AI prompt quality assessment
 | Clarity | 10.4% | 5th |
 
 ## Files
-- `prompt-score.ipynb` — Core scoring with GPT-3.5/4
-- `SHP.ipynb` — Stanford Human Preferences pipeline
-- `SHP_2.ipynb` — SHP deduplication workflow
+- `prompt-score.ipynb` - Core scoring with GPT-3.5/4
+- `SHP.ipynb` - Stanford Human Preferences pipeline
+- `SHP_2.ipynb` - SHP deduplication workflow
 
 ## 11 ML Models
 Linear Regression | Ridge | Lasso | Elastic Net | Random Forest | Gradient Boosting | SVR | Neural Network | XGBoost | Bayesian Ridge | Decision Tree
 
-All 11 converged to R² = 0.572 — validating the bias correction approach.
+All 11 converged to R² = 0.572 - validating the bias correction approach.
 
 ## How to Run
 ```bash
